@@ -235,9 +235,8 @@ class MultiAgentTrainingEnv(gym.Env):
         return self._get_obs(), reward, terminated, truncated, {}
 
 
-# ==========================================
+
 # 2. PLOTTING & TRAINING
-# ==========================================
 def plot_clean_curve(log_folder, title='Training Progress (Smoothed)'):
     try:
         df = load_results(log_folder)
@@ -278,7 +277,6 @@ if __name__ == '__main__':
     os.makedirs(log_dir, exist_ok=True)
 
     # 2. Init Env with Monitor (Adjust num_robots here)
-    # E.g., num_robots=5 means 1 learning agent and 4 dynamic task-completing agents
     env = MultiAgentTrainingEnv(num_robots=10)
     env = Monitor(env, log_dir)
 
@@ -297,8 +295,8 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("\nTraining interrupted manually. Saving model...")
 
-    model.save("10agent_02e_25c")
-    print("Saved as '10agent_02e_25c.zip'")
+    model.save("scalable_policy")
+    print("Saved as 'scalable_policy.zip'")
 
     # 4. Plot
     print("Generating Clean Learning Curve...")
