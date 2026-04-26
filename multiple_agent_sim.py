@@ -173,11 +173,11 @@ def run_multi_robot_demo(num_robots=5):
     env = MultiRobotEnv(num_robots=num_robots)
     print("Loading Sensor-Aware Brain...")
 
-    if not os.path.exists("test_model_v3.zip"):
-        print("Error: Train 'test_model_v3.zip' first!")
+    if not os.path.exists("scalable_policy.zip"):
+        print("Error: Train 'scalable_policy' first!")
         return
 
-    model = PPO.load("test_model_v3.zip")
+    model = PPO.load("scalable_policy")
     env.reset()
     plt.ion()
     fig, ax = plt.subplots(figsize=(8, 8))
