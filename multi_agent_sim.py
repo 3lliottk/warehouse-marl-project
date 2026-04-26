@@ -160,11 +160,11 @@ def run_dual_robot_demo():
     env = DualRobotEnv()
     print("Loading Sensor-Aware Brain (v2)...")
 
-    if not os.path.exists("ppo_multi_agent_v2.zip"):
-        print("Error: Train 'ppo_multi_agent_v2' first!")
+    if not os.path.exists("base_policy.zip"):
+        print("Error: Train 'base_policy' first!")
         return
 
-    model = PPO.load("ppo_multi_agent_v2")
+    model = PPO.load("base_policy")
     env.reset()
     plt.ion()
     fig, ax = plt.subplots(figsize=(6, 6))
