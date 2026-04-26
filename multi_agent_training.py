@@ -206,5 +206,5 @@ if __name__ == '__main__':
 
     model.learn(total_timesteps=2000000)
 
-    model.save("ppo_multi_agent_v2")
-    print("Saved as 'ppo_multi_agent_v2.zip'")
+    model.save("base_policy")
+    print("Saved as 'base_policy.zip'")
